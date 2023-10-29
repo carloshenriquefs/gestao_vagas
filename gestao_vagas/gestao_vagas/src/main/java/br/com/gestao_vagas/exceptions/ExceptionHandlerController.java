@@ -16,12 +16,13 @@ public class ExceptionHandlerController {
 
     private MessageSource messageSource;
 
-    public ExceptionHandlerController(MessageSource message) {
-        this.messageSource = message;
+    public ExceptionHandlerController(MessageSource messageSource) {
+        this.messageSource = messageSource;
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<List<ErrorMessageDTO>> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
+    public ResponseEntity<List<ErrorMessageDTO>> handleMethodArgumentNotValidException(
+            MethodArgumentNotValidException e) {
         List<ErrorMessageDTO> dto = new ArrayList<>();
 
         e.getBindingResult().getFieldErrors().forEach(err -> {

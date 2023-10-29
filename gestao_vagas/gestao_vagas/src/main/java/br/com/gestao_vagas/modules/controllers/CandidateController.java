@@ -1,6 +1,6 @@
-package br.com.gestao_vagas.modules.cadidate.controllers;
+package br.com.gestao_vagas.modules.controllers;
 
-import br.com.gestao_vagas.modules.cadidate.CandidateEntity;
+import br.com.gestao_vagas.modules.candidate.CandidateEntity;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

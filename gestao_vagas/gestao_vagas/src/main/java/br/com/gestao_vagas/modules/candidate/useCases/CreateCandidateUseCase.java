@@ -2,7 +2,7 @@ package br.com.gestao_vagas.modules.candidate.useCases;
 
 import br.com.gestao_vagas.exceptions.UserFoundException;
 import br.com.gestao_vagas.modules.candidate.CandidateEntity;
-import br.com.gestao_vagas.repository.CandidateRepository;
+import br.com.gestao_vagas.modules.company.repositories.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

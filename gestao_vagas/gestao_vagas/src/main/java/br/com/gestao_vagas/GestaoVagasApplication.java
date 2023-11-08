@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @OpenAPIDefinition(
         info = @Info(
                 title = "Gestão de Vagas",
-                description = "API responsável pela Gestão de Vagas",
+                description = "API Responsável Pela Gestão de Vagas",
                 version = "1"
         )
 )

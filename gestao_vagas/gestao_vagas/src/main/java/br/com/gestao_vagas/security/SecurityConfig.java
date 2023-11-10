@@ -28,11 +28,13 @@ public class SecurityConfig {
                     auth.requestMatchers("/candidate/").permitAll()
                             .requestMatchers("/company/").permitAll()
                             .requestMatchers("/auth/company").permitAll()
-                            .requestMatchers("/auth/candidate").permitAll()
+                            .requestMatchers("/candidate/auth").permitAll()
                             .requestMatchers(SWAGGER_LIST).permitAll();
 
                     auth.anyRequest().authenticated();
-                }).addFilterBefore(securityFilter, BasicAuthenticationFilter.class);
+                })
+                .addFilterBefore(securityFilter, BasicAuthenticationFilter.class);
+
         return http.build();
     }
 

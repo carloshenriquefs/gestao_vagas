@@ -22,7 +22,7 @@ public class JobController {
     private CreateJobUseCase createJobUseCase;
 
     @PostMapping("/")
-    @PreAuthorize("hashRole('COMPANY')")
+    @PreAuthorize("hasRole('COMPANY')")
     public JobEntity create(@Valid @RequestBody CreateJobDTO createJobDTO, HttpServletRequest request) {
         var companyId = request.getAttribute("company_id");
 

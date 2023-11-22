@@ -18,6 +18,9 @@ public class ApplyJobCandidateUseCase {
     @Autowired
     private CandidateRepository candidateRepository;
 
+    @Autowired
+    private ApplyJobCandidateUseCase applyJobCandidateUseCase;
+
     public void execute(UUID idCandidate, UUID idJob) {
 
         this.candidateRepository.findById(idCandidate).orElseThrow(() -> {

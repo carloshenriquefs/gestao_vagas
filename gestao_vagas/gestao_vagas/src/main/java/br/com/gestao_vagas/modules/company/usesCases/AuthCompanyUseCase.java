@@ -18,6 +18,8 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
 
+import static br.com.gestao_vagas.constants.Constants.USERNAME_OR_PASSWORD_INCORRECT;
+
 @Service
 public class AuthCompanyUseCase {
 
@@ -33,7 +35,7 @@ public class AuthCompanyUseCase {
     public AuthCompanyResponseDTO execute(AuthCompanyDTO authCompanyDTO) throws AuthenticationException {
         var company = this.companyRepository.findByUsername(authCompanyDTO.getUsername()).orElseThrow(
                 () -> {
-                    throw new UsernameNotFoundException("Username/password in incorrect");
+                    throw new UsernameNotFoundException(USERNAME_OR_PASSWORD_INCORRECT);
                 });
 
         var passwordMatches = this.passwordEncoder.matches(authCompanyDTO.getPassword(), company.getPassword());

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static br.com.gestao_vagas.constants.Constants.USER_NOT_FOUND;
+
 @Service
 public class ProfileCandidateUseCase {
 
@@ -17,7 +19,7 @@ public class ProfileCandidateUseCase {
     public ProfileCandidateResponseDTO execute(UUID idCandidate) {
         var candidate = this.candidateRepository.findById(idCandidate)
                 .orElseThrow(() -> {
-                    throw new UsernameNotFoundException("User not found");
+                    throw new UsernameNotFoundException(USER_NOT_FOUND);
                 });
 
         var candidateDTO = ProfileCandidateResponseDTO.builder()

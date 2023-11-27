@@ -16,6 +16,8 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
 
+import static br.com.gestao_vagas.constants.Constants.USERNAME_OR_PASSWORD_INCORRECT;
+
 @Service
 public class AuthCandidateUseCase {
 
@@ -32,7 +34,7 @@ public class AuthCandidateUseCase {
             throws AuthenticationException {
         var candidate = this.candidateRepository.findByUsername(authCandidateRequestDTO.username())
                 .orElseThrow(() -> {
-                    throw new UsernameNotFoundException("Username/password incorrect");
+                    throw new UsernameNotFoundException(USERNAME_OR_PASSWORD_INCORRECT);
                 });
 
         var passwordMatches = this.passwordEncoder

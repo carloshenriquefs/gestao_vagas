@@ -20,7 +20,7 @@ services:
       - POSTGRES_DB=gestao_vagas
   prometheus:
     container_name: prometheus
-    image: pron/prometheus:latest
+    image: prom/prometheus:latest
     volumes:
       - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
@@ -35,3 +35,5 @@ services:
       - 3000:3000
     networks:
       - gv-network
+    volumes:
+      - ./grafana_data:/etc/grafana/provisioning/datasources
